@@ -11,7 +11,7 @@ class UserRepository:
         return self.db.query(User).all()
     
     def get_by_id(self, id: int):
-        return self.db.query(User).filter_by(User.id == id).first()
+        return self.db.query(User).filter(User.id == id).first()
     
     def create_user(self, data: UserCreate):
         user = User(**data.model_dump())
