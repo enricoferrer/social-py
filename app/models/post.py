@@ -11,5 +11,5 @@ class Post(Base):
     descricao = Column(String, nullable=False)
     
     user_id = Column(Integer, ForeignKey("users.id"))
-    usuario_dono = relationship("User", back_populates="posts")
+    author = relationship("User", back_populates="posts")
     comments = relationship("Comment", back_populates="post_comentado",cascade="all, delete")  

@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from app.schemas.user import UserSummary
 
 class CommentCreate(BaseModel):
     comment: str
@@ -7,7 +8,7 @@ class CommentCreate(BaseModel):
     
 class CommentsResponse(BaseModel):
     comment: str
-    user_id: int
+    author: UserSummary
     post_id: int
     
     model_config = {'from_attributes': True}
