@@ -16,6 +16,7 @@ docker-compose up --build
 ```
 
 Isso irá:
+
 - Criar e iniciar o container do PostgreSQL
 - Criar e iniciar o container da aplicação FastAPI
 - Executar automaticamente as migrations do Alembic
@@ -34,6 +35,7 @@ docker-compose down
 ```
 
 Para remover os volumes (dados do banco):
+
 ```bash
 docker-compose down -v
 ```
@@ -60,6 +62,7 @@ Depois confirme as mudanças geradas no arquivo em `alembic/versions/`.
 ## Variáveis de Ambiente
 
 As variáveis estão configuradas no `docker-compose.yml`:
+
 - `DATABASE_URL`: URL de conexão com PostgreSQL
 - `POSTGRES_USER`: user
 - `POSTGRES_PASSWORD`: password
@@ -72,6 +75,7 @@ Se precisar mudar, edite o `docker-compose.yml` e o `.env` (para desenvolvimento
 ### Erro de conexão ao banco
 
 Certifique-se de que o container do PostgreSQL está saudável:
+
 ```bash
 docker-compose ps
 ```

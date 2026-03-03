@@ -11,3 +11,4 @@ class User(Base):
     senha = Column(String, nullable=False)
     
     posts = relationship("Post", back_populates="usuario_dono", cascade="all, delete")
+    comments = relationship("Comment", back_populates="usuario_dono", cascade="all, delete")

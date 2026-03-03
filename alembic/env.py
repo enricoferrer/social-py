@@ -3,9 +3,14 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
 import os
+from dotenv import load_dotenv
 from app.core.database import Base
 from app.models.user import User
 from app.models.post import Post
+from app.models.comment import Comment
+
+# Load environment variables from .env file
+load_dotenv()
 
 # this is the Alembic Config object, which provides
 # the values of the [alembic] section of the .ini file in use.
